@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useCallback } from "react";
 import { ParallaxBanner } from "react-scroll-parallax";
 import { motion } from "framer-motion";
 import useInfiniteScroll from "../hooks/useInfiniteScroll";
@@ -11,14 +11,25 @@ import ContactSection from "../pages/Contact";
 
 const Home = () => {
     const [step, setStep] = useState(1);
+    const [isLoading, setIsLoading] = useState(false);
     const sentinelRef = useRef(null);
 
-    useInfiniteScroll(() => {
-        if (step < 5) setStep((prev) => prev + 1);
-    }, sentinelRef);
+    const loadMore = useCallback(() => {
+        if (step < 5 && !isLoading) {
+            setIsLoading(true);
+
+            // Имитация задержки подгрузки контента
+            setTimeout(() => {
+                setStep((prev) => prev + 1);
+                setIsLoading(false);
+            }, 300); // Оптимальная задержка для плавности
+        }
+    }, [step, isLoading]);
+
+    useInfiniteScroll(loadMore, sentinelRef);
 
     return (
-        <div>
+        <div className="overflow-x-hidden">
             {/* Hero Section */}
             <ParallaxBanner
                 layers={[{ image: heroBg, speed: -20 }]}
@@ -29,16 +40,30 @@ const Home = () => {
                     </h2> <p className="text-lg text-gray-700">
                     Мы — эксперты в электромонтаже, наладке оборудования, строительстве ЛЭП и подстанций.
                     Гарантируем эффективность и безопасность на каждом этапе.
-            </p>
-            </div>
+                </p>
+                </div>
             </ParallaxBanner>
 
-            {/* Lazy-loaded sections */}
-            {step >= 2 && <ServicesSection />}
-            {step >= 3 && <ProjectsSection />}
-            {step >= 4 && <AboutSection />}
-            {step >= 5 && <ContactSection />}
-            <div ref={sentinelRef} className="h-1" />
+            {/* Lazy-loaded sections with smooth transitions */}
+            <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.5 }}
+            >
+                {step >= 2 && <ServicesSection />}
+                {step >= 3 && <ProjectsSection />}
+                {step >= 4 && <AboutSection />}
+                {step >= 5 && <ContactSection />}
+            </motion.div>
+
+            {/* Loading indicator */}
+            {isLoading && (
+                <div className="flex justify-center py-8">
+                    <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-500"></div>
+                </div>
+            )}
+
+            <div ref={sentinelRef} className="h-20" />
         </div>
     );
 };
