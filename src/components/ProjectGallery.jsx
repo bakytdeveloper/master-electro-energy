@@ -40,12 +40,14 @@ const ProjectGallery = () => {
                             initial={{ opacity: 0, y: 30 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                            transition={{ duration: 0.6 }}
+                            transition={{ duration: 0.3 }}
                         >
                             <img
                                 src={project.image}
                                 alt={project.title}
                                 className="w-full h-48 object-cover"
+                                loading="lazy" // Добавьте ленивую загрузку
+
                             />
                             <div className="p-4 text-left">
                                 <h3 className="text-xl font-semibold text-warm-500">
