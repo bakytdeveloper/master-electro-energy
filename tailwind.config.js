@@ -14,6 +14,7 @@ export default {
           300: "#fcd34d",
           400: "#fbbf24",
           500: "#0541f5",
+          600: "#bdf1fa",
         },
         beige: "#f5f5dc",
         sand: "#fdf6e3",

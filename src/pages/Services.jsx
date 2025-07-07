@@ -29,7 +29,7 @@ const services = [
 
 const Services = () => {
     return (
-        <section className="bg-sand py-16 px-4">
+        <section className="bg-sand px-4">
             <div className="max-w-7xl mx-auto text-center">
                 <h2 className="text-3xl font-bold text-warm-500 mb-8">Наши услуги</h2>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">

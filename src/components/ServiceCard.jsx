@@ -7,7 +7,7 @@ const ServiceCard = ({ icon, title, description }) => {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.3 }}
         >
             <img src={icon} alt={title} className="w-16 h-16 mb-4" />
             <h3 className="text-xl font-semibold text-warm-500 mb-2">{title}</h3>

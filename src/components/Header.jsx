@@ -49,7 +49,7 @@ const Header = () => {
 
             {/* Mobile menu */}
             {menuOpen && (
-                <div className="md:hidden bg-white/90 backdrop-blur-md shadow-md px-6 py-4 space-y-3 text-warm-600 font-medium">
+                <div className="md:hidden bg-white/90 backdrop-blur-md shadow-md px-6 py-4 space-y-3 text-warm-500 font-semibold">
                     {navItems.map(({ path, label }) => (
                         <Link
                             key={path}

@@ -63,7 +63,7 @@ const Home = () => {
                 </div>
             )}
 
-            <div ref={sentinelRef} className="h-20" />
+            <div ref={sentinelRef} />
         </div>
     );
 };
