@@ -3,15 +3,15 @@ import aboutBg from "../assets/about-energy.jpg";
 const About = () => {
     return (
         <section
-            className="relative min-h-screen bg-cover bg-center bg-fixed text-white"
+            className="relative bg-cover bg-center bg-fixed text-white"
             style={{ backgroundImage: `url(${aboutBg})` }}
         >
-            {/* Затемнённый оверлей на всю высоту экрана */}
+            {/* Затемнённый оверлей */}
             <div className="absolute inset-0 bg-black/60 backdrop-blur-sm"></div>
 
             {/* Контент с относительным позиционированием */}
-            <div className="relative z-10 py-16 px-6 min-h-screen flex flex-col">
-                <div className="max-w-5xl mx-auto text-center my-auto">
+            <div className="relative z-10 py-16 px-6">
+                <div className="max-w-5xl mx-auto text-center">
                     <h2 className="text-4xl font-bold text-warm-500 mb-6">О нас</h2>
                     <p className="text-lg mb-6">
                         Мы — команда профессионалов в сфере электроэнергетики. Наша цель — создавать надёжные, безопасные и эффективные решения для объектов любой сложности.
