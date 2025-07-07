@@ -12,7 +12,7 @@ const Header = () => {
     ];
 
     return (
-        <header className="fixed top-0 left-0 w-full z-50 backdrop-blur-md bg-white/70 shadow-sm">
+        <header className="fixed top-0 left-0 w-full z-50 backdrop-blur-md bg-white/40 shadow-sm">
             <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
                 <h1 className="text-2xl font-bold text-warm-500">ElectroEnergy</h1>
                 <nav className="space-x-4 text-warm-500 font-medium">
