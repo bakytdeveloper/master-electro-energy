@@ -3,7 +3,7 @@ const Footer = () => {
         <footer className="bg-warm-100 text-gray-800 py-6">
             <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left">
                 <p className="text-sm">
-                    © {new Date().getFullYear()} ElectroEnergy. Все права защищены.
+                    © {new Date().getFullYear()} ОсОО "Энерго-Экспресс". Все права защищены.
                 </p>
                 <div className="space-x-4 text-sm">
                     <a
@@ -19,7 +19,7 @@ const Footer = () => {
                         href="mailto:info@electro-energy.kg"
                         className="text-warm-600 hover:underline"
                     >
-                        info@electro-energy.kg
+                        info@energy-express.kg
                     </a>
                 </div>
             </div>
