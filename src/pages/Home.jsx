@@ -12,19 +12,11 @@ const Home = () => {
     const [step, setStep] = useState(1);
     const sentinelRef = useRef(null);
 
-    // Упрощенный обработчик скролла без задержки
-    const handleIntersection = () => {
-        if (step < 5) {
-            setStep(prev => prev + 1);
-        }
-    };
-
-    // Простой вариант useInfiniteScroll без задержек
     React.useEffect(() => {
         const observer = new IntersectionObserver(
             (entries) => {
-                if (entries[0].isIntersecting) {
-                    handleIntersection();
+                if (entries[0].isIntersecting && step < 5) {
+                    setStep(prev => prev + 1);
                 }
             },
             { threshold: 0.1 }
@@ -59,7 +51,7 @@ const Home = () => {
                 </div>
             </ParallaxBanner>
 
-            {/* Sections loading immediately on scroll */}
+            {/* Sections */}
             <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
