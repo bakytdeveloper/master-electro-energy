@@ -1,50 +1,65 @@
-import { useState, useRef, useCallback } from "react";
+import React, { useState, useRef } from "react";
 import { ParallaxBanner } from "react-scroll-parallax";
 import { motion } from "framer-motion";
-import useInfiniteScroll from "../hooks/useInfiniteScroll";
 
 import heroBg from "../assets/hero-energy.jpg";
-import ServicesSection from "../pages/Services";
+import ServicesSection from "../components/ServicesSection";
 import ProjectsSection from "../pages/Projects";
 import AboutSection from "../pages/About";
 import ContactSection from "../pages/Contact";
 
 const Home = () => {
     const [step, setStep] = useState(1);
-    const [isLoading, setIsLoading] = useState(false);
     const sentinelRef = useRef(null);
 
-    const loadMore = useCallback(() => {
-        if (step < 5 && !isLoading) {
-            setIsLoading(true);
-
-            // Имитация задержки подгрузки контента
-            setTimeout(() => {
-                setStep((prev) => prev + 1);
-                setIsLoading(false);
-            }, 300); // Оптимальная задержка для плавности
+    // Упрощенный обработчик скролла без задержки
+    const handleIntersection = () => {
+        if (step < 5) {
+            setStep(prev => prev + 1);
         }
-    }, [step, isLoading]);
+    };
 
-    useInfiniteScroll(loadMore, sentinelRef);
+    // Простой вариант useInfiniteScroll без задержек
+    React.useEffect(() => {
+        const observer = new IntersectionObserver(
+            (entries) => {
+                if (entries[0].isIntersecting) {
+                    handleIntersection();
+                }
+            },
+            { threshold: 0.1 }
+        );
+
+        if (sentinelRef.current) {
+            observer.observe(sentinelRef.current);
+        }
+
+        return () => {
+            if (sentinelRef.current) {
+                observer.unobserve(sentinelRef.current);
+            }
+        };
+    }, [step]);
 
     return (
         <div className="overflow-x-hidden">
             {/* Hero Section */}
             <ParallaxBanner
                 layers={[{ image: heroBg, speed: -20 }]}
-                className="h-[90vh] flex items-center justify-center" >
+                className="h-[90vh] flex items-center justify-center"
+            >
                 <div className="bg-white/70 p-8 rounded-lg shadow-lg max-w-2xl text-center animate-fade-in">
                     <h2 className="text-4xl font-bold text-warm-500 mb-4">
                         Надёжные решения в сфере электроэнергетики
-                    </h2> <p className="text-lg text-gray-700">
-                    Мы — эксперты в электромонтаже, наладке оборудования, строительстве ЛЭП и подстанций.
-                    Гарантируем эффективность и безопасность на каждом этапе.
-                </p>
+                    </h2>
+                    <p className="text-lg text-gray-700">
+                        Мы — эксперты в электромонтаже, наладке оборудования, строительстве ЛЭП и подстанций.
+                        Гарантируем эффективность и безопасность на каждом этапе.
+                    </p>
                 </div>
             </ParallaxBanner>
 
-            {/* Lazy-loaded sections with smooth transitions */}
+            {/* Sections loading immediately on scroll */}
             <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
@@ -55,13 +70,6 @@ const Home = () => {
                 {step >= 4 && <AboutSection />}
                 {step >= 5 && <ContactSection />}
             </motion.div>
-
-            {/* Loading indicator */}
-            {isLoading && (
-                <div className="flex justify-center py-8">
-                    <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-500"></div>
-                </div>
-            )}
 
             <div ref={sentinelRef} />
         </div>
