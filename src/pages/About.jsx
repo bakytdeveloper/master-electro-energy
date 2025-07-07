@@ -37,7 +37,12 @@ const About = () => {
                         <div className="bg-white/10 border border-white/20 p-6 rounded-lg shadow-md hover:bg-white/20 transition-all duration-300 transform group-hover:scale-[1.02]">
                             <h3 className="text-xl font-semibold text-white mb-2">Связаться с нами</h3>
                             <p className="text-md">
-                                📞 Телефон / WhatsApp:{" "}
+                                <span className="md:hidden">
+                                    📞 Телефон / WhatsApp:<br />
+                                </span>
+                                <span className="hidden md:inline">
+                                    📞 Телефон / WhatsApp:{" "}
+                                </span>
                                 <span className="text-warm-200 underline font-semibold group-hover:text-white">
                                     +996 701 15 20 20
                                 </span>
