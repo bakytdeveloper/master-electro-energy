@@ -13,13 +13,22 @@ const ProjectGallery = () => {
             : projects.filter((p) => p.category === filter);
     }, [filter]);
 
+    // Предзагрузка первых N изображений
+    const preloadImages = useMemo(() => {
+        const img = new Image();
+        projects.slice(0, 6).forEach(project => {
+            img.src = project.image;
+        });
+    }, []);
+
     return (
         <section className="bg-sand-gradient py-16 px-4">
             <div className="max-w-7xl mx-auto text-center">
                 <motion.h2
                     className="text-3xl font-bold text-warm-500 mb-6"
                     initial={{ opacity: 0, y: -20 }}
-                    animate={{ opacity: 1, y: 0 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "0px 0px -100px 0px" }}
                     transition={{ duration: 0.5 }}
                 >
                     Наши проекты
@@ -27,15 +36,10 @@ const ProjectGallery = () => {
 
                 <motion.div
                     className="flex justify-center gap-4 mb-8 flex-wrap"
-                    initial="hidden"
-                    animate="visible"
-                    variants={{
-                        visible: {
-                            transition: {
-                                staggerChildren: 0.1,
-                            },
-                        },
-                    }}
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5 }}
                 >
                     {categories.map((cat) => (
                         <motion.button
@@ -46,12 +50,9 @@ const ProjectGallery = () => {
                                     ? "bg-warm-400 text-white"
                                     : "bg-white text-warm-500"
                             }`}
-                            variants={{
-                                hidden: { opacity: 0, y: 10 },
-                                visible: { opacity: 1, y: 0 },
-                            }}
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
+                            transition={{ type: "spring", stiffness: 400, damping: 10 }}
                         >
                             {cat}
                         </motion.button>
@@ -65,17 +66,22 @@ const ProjectGallery = () => {
                                 key={project.id}
                                 className="bg-white/90 rounded-lg shadow-md overflow-hidden will-change-transform"
                                 initial={{ opacity: 0, y: 30 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                exit={{ opacity: 0, y: -20 }}
-                                transition={{ duration: 0.4, ease: "easeOut" }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true, margin: "0px 0px -100px 0px" }}
+                                // transition={{ duration: 0.4, ease: "easeOut" }}
                                 whileHover={{ scale: 1.01 }}
+                                exit={{ opacity: 0 }}
                             >
-                                <img
-                                    src={project.image}
-                                    alt={project.title}
-                                    className="w-full h-48 object-cover"
-                                    loading="lazy"
-                                />
+                                <div className="relative pt-[56.25%] bg-gray-100"> {/* Добавлен фоновый цвет */}
+                                    <img
+                                        src={project.image}
+                                        alt={project.title}
+                                        className="absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-300 opacity-0"
+                                        loading="lazy"
+                                        decoding="async"
+                                        onLoad={(e) => e.currentTarget.classList.add('opacity-100')}
+                                    />
+                                </div>
                                 <div className="p-4 text-left">
                                     <h3 className="text-xl font-semibold text-warm-500">
                                         {project.title}
@@ -85,10 +91,8 @@ const ProjectGallery = () => {
                             </motion.div>
                         ))}
                     </AnimatePresence>
-
                 </div>
             </div>
-
         </section>
     );
 };
