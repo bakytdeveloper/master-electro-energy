@@ -14,7 +14,7 @@ const ProjectGallery = () => {
     }, [filter]);
 
     return (
-        <section className="bg-sand py-16 px-4">
+        <section className="bg-sand-gradient py-16 px-4">
             <div className="max-w-7xl mx-auto text-center">
                 <motion.h2
                     className="text-3xl font-bold text-warm-500 mb-6"

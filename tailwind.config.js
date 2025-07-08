@@ -18,7 +18,23 @@ export default {
         },
         beige: "#f5f5dc",
         sand: "#fdf6e3",
+
+        // Добавленные фоновые цвета
+        background: {
+          light: "#ffffff",
+          dark: "#1a1a1a",
+          primary: "#f8fafc",
+          secondary: "#e2e8f0",
+          accent: "#0ea5e9",
+        },
       },
+
+      backgroundImage: {
+        'accent-gradient': 'linear-gradient(to bottom, #0ea5e9, #f5f5dc)',
+        'sand-gradient': 'linear-gradient(to bottom, #fdf6e3, #0ea5e9)',
+
+      },
+
       fontFamily: {
         sans: ['"Inter"', 'sans-serif'],
       },
