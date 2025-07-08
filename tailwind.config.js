@@ -30,7 +30,7 @@ export default {
       },
 
       backgroundImage: {
-        'accent-gradient': 'linear-gradient(to bottom, #0ea5e9, #f5f5dc)',
+        'accent-gradient': 'linear-gradient(to bottom, #0ea5e9, #fdf6e3)',
         'sand-gradient': 'linear-gradient(to bottom, #fdf6e3, #0ea5e9)',
 
       },

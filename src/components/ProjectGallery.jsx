@@ -85,8 +85,10 @@ const ProjectGallery = () => {
                             </motion.div>
                         ))}
                     </AnimatePresence>
+
                 </div>
             </div>
+
         </section>
     );
 };

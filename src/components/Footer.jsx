@@ -1,6 +1,6 @@
 const Footer = () => {
     return (
-        <footer className="bg-warm-100 text-gray-800 py-8">
+        <footer className="bg-sand text-gray-800 py-8">
             <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left">
                 <p className="text-sm">
                     © {new Date().getFullYear()} ОсОО "Энерго-Экспресс".
@@ -15,13 +15,7 @@ const Footer = () => {
                     >
                         WhatsApp: +996 701 15 20 20
                     </a>
-                    <span>|</span>
-                    {/*<a*/}
-                    {/*    href="mailto:info@electro-energy.kg"*/}
-                    {/*    className="text-gray-800 hover:underline"*/}
-                    {/*>*/}
-                    {/*    info@energy-express.kg*/}
-                    {/*</a>*/}
+                    {/*<span>|</span>*/}
                 </div>
             </div>
         </footer>
