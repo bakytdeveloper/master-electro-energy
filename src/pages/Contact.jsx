@@ -3,7 +3,6 @@ const Contact = () => {
         <section className="min-h-screen bg-accent-gradient py-12 px-6"> {/* Изменили py-16 на py-12 */}
             <div className="max-w-5xl mx-auto">
                 <h2 className="text-3xl font-bold text-warm-500 text-center mb-8">Связаться с нами</h2>
-
                 <div className="grid md:grid-cols-2 gap-8">
                     {/* Форма */}
                     <form className="bg-white/90 p-6 rounded-lg shadow-md space-y-4">
@@ -45,7 +44,7 @@ const Contact = () => {
                                     +996 701 15 20 20
                                 </a>
                             </div>
-                            <p>📧 Email: info@electro-energy.kg</p>
+                            <p>📧 Email: info@energy-express.kg</p>
                             <p>📍 Адрес: г. Бишкек, Кыргызстан</p>
                         </div>
 
