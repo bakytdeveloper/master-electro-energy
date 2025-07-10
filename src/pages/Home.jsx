@@ -63,6 +63,7 @@ const Home = () => {
             </motion.div>
 
             <div ref={sentinelRef} />
+            
         </div>
     );
 };
