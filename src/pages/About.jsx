@@ -6,7 +6,6 @@ const About = () => {
             className="relative bg-cover bg-center bg-fixed text-white"
             style={{ backgroundImage: `url(${aboutBg})` }}
         >
-
             {/* Затемнённый оверлей */}
             <div className="absolute inset-0 bg-black/60 backdrop-blur-sm"></div>
 
