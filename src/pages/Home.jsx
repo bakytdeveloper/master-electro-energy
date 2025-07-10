@@ -1,7 +1,6 @@
 import React, { useState, useRef } from "react";
 import { ParallaxBanner } from "react-scroll-parallax";
 import { motion } from "framer-motion";
-
 import heroBg from "../assets/hero-energy.jpg";
 import ServicesSection from "../pages/Services";
 import ProjectsSection from "../pages/Projects";
