@@ -1,4 +1,4 @@
-import { motion } from "framer-motion"; // Добавьте эту строку
+import { motion } from "framer-motion"; 
 import ServiceCard from "../components/ServiceCard";
 import montageIcon from "../assets/icons/montage.png";
 import testingIcon from "../assets/icons/testing.png";
