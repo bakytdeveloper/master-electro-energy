@@ -44,7 +44,7 @@ const Contact = () => {
                                     +996 701 15 20 20
                                 </a>
                             </div>
-                            <p>📧 Email: info@energy-express.kg</p>
+                            {/*<p>📧 Email: info@energy-express.kg</p>*/}
                             <p>📍 Адрес: г. Бишкек, Кыргызстан</p>
                         </div>
 
