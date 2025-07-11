@@ -32,14 +32,14 @@ const Contact = () => {
                     {/* Контакты и карта */}
                     <div className="space-y-6">
                         <div className="bg-white/90 p-6 rounded-lg shadow-md">
-                            <h3 className="text-xl font-semibold text-warm-600 mb-2">Контакты</h3>
+                            <h3 className="text-xl font-semibold text-warm-500 mb-2">Контакты</h3>
                             <div className="md:flex md:items-baseline">
                                 <p className="md:mr-1">📞 Телефон / WhatsApp:</p>
                                 <a
                                     href="https://wa.me/996701152020"
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="text-center text-warm-500 underline hover:text-warm-600 block md:inline"
+                                    className="text-center text-warm-500 underline font-semibold hover:text-warm-600 block md:inline"
                                 >
                                     +996 701 15 20 20
                                 </a>
