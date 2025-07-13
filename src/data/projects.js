@@ -1,6 +1,6 @@
-import powerline from "../assets/projects/powerline.png";
-import substation from "../assets/projects/substation.png";
-import testing from "../assets/projects/testing.png";
+import powerline from "../assets/powerline.jpg";
+import substation from "../assets/projects/substation.jpg";
+import testing from "../assets/projects/testing.jpg";
 
 const projects = [
     {
