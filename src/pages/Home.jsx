@@ -36,7 +36,7 @@ const Home = () => {
         <div className="overflow-x-hidden">
             {/* Hero Section */}
             <ParallaxBanner
-                layers={[{ image: heroBg, speed: -20 }]}
+                layers={[{ image: heroBg, speed: -10 }]}
                 className="h-[90vh] flex items-center justify-center"
             >
                 <div className="bg-white/70 p-8 rounded-lg shadow-lg max-w-2xl text-center animate-fade-in">
@@ -63,7 +63,6 @@ const Home = () => {
             </motion.div>
 
             <div ref={sentinelRef} />
-            
         </div>
     );
 };

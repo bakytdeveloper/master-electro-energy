@@ -15,7 +15,6 @@ const Footer = () => {
                     >
                         WhatsApp: +996 701 15 20 20
                     </a>
-                    {/*<span>|</span>*/}
                 </div>
             </div>
         </footer>
