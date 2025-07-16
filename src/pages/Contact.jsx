@@ -1,6 +1,6 @@
 const Contact = () => {
     return (
-        <section className="min-h-screen bg-accent-gradient py-12 px-6"> 
+        <section className="min-h-screen bg-accent-gradient py-12 px-6">
             <div className="max-w-5xl mx-auto mt-4">
                 <h2 className="text-3xl font-bold text-warm-500 text-center mb-8">Связаться с нами</h2>
                 <div className="grid md:grid-cols-2 gap-8">
