@@ -39,11 +39,11 @@ const Home = () => {
                 layers={[{ image: heroBg, speed: -10 }]}
                 className="h-[90vh] flex items-center justify-center"
             >
-                <div className="bg-white/70 p-8 rounded-lg shadow-lg max-w-2xl text-center animate-fade-in">
+                <div className="bg-white/50 p-8 rounded-lg shadow-lg max-w-2xl text-center animate-fade-in">
                     <h2 className="text-4xl font-bold text-warm-500 mb-4">
                         Надёжные решения в сфере электроэнергетики
                     </h2>
-                    <p className="text-lg text-gray-700">
+                    <p className="text-lg text-black-700">
                         Мы — эксперты в электромонтаже, наладке оборудования, строительстве ЛЭП и подстанций.
                         Гарантируем эффективность и безопасность на каждом этапе.
                     </p>

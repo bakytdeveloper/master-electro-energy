@@ -13,4 +13,12 @@ body {
 
 .animate-fade-in {
   animation: fadeIn 1.2s ease-out forwards;
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(1px);
+}
+
+.blur {
+  backdrop-filter: blur(20px);
+  border-radius: 20px;
+  -webkit-backdrop-filter: blur(20px);
 }
