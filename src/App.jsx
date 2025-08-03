@@ -13,13 +13,22 @@ function App() {
             <div className="flex flex-col min-h-screen bg-sand text-gray-800">
                 <Header />
                 <main className="flex-grow">
+                    {/*<Routes>*/}
+                    {/*    <Route path="/master-electro-energy" element={<Home />} />*/}
+                    {/*    <Route path="/services" element={<Services />} />*/}
+                    {/*    <Route path="/projects" element={<Projects />} />*/}
+                    {/*    <Route path="/about" element={<About />} />*/}
+                    {/*    <Route path="/contact" element={<Contact />} />*/}
+                    {/*</Routes>*/}
+
                     <Routes>
-                        <Route path="/master-electro-energy" element={<Home />} />
-                        <Route path="/services" element={<Services />} />
-                        <Route path="/projects" element={<Projects />} />
-                        <Route path="/about" element={<About />} />
-                        <Route path="/contact" element={<Contact />} />
+                        <Route path="/master-electro-energy/" element={<Home />} />
+                        <Route path="/master-electro-energy/services" element={<Services />} />
+                        <Route path="/master-electro-energy/projects" element={<Projects />} />
+                        <Route path="/master-electro-energy/about" element={<About />} />
+                        <Route path="/master-electro-energy/contact" element={<Contact />} />
                     </Routes>
+
                 </main>
                 <Footer />
             </div>

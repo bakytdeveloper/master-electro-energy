@@ -7,11 +7,11 @@ const Header = () => {
     const [menuOpen, setMenuOpen] = useState(false);
 
     const navItems = [
-        { path: "/", label: "Главная" },
-        { path: "/services", label: "Услуги" },
-        { path: "/projects", label: "Проекты" },
-        { path: "/about", label: "О нас" },
-        { path: "/contact", label: "Контакты" },
+        { path: "/master-electro-energy", label: "Главная" },
+        { path: "/master-electro-energy/services", label: "Услуги" },
+        { path: "/master-electro-energy/projects", label: "Проекты" },
+        { path: "/master-electro-energy/about", label: "О нас" },
+        { path: "/master-electro-energy/contact", label: "Контакты" },
     ];
 
     return (
